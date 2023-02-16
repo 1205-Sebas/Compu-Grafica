@@ -4,7 +4,7 @@
 
 
 #include "Triangulos.h"
-
+#include "Cola.h"
 //-----------------------------------------------------------------------------
 
 
@@ -18,6 +18,7 @@ protected:
    float timer010;  // timer counting 0->1->0
    bool bUp;        // flag if counting up or down.
    Triangulos* miTriangulo;
+   Cola* miCola;
 
 
 public:
@@ -42,13 +43,14 @@ public:
         glPushMatrix();
 
             //Transformaciones globales
-            // glRotatef(timer010*360, 0.5, 1.0f, 0.1f);
-        glTranslatef(0, 0, -5);
-        glPushMatrix();
+            //glRotatef(timer010*360, 0.5, 1.0f, 0.1f);
+       glTranslatef(0, 0, 0);
+       /* glPushMatrix();
             glutSolidTeapot(0.5);
         glPopMatrix();
+        */
 
-
+/*
         glPushMatrix();
             glTranslatef(1.5, 0, 0);
             glutSolidTeapot(0.5);
@@ -83,15 +85,51 @@ public:
             
             glutWireSphere(0.5, 20, 20);
         glPopMatrix();
+    */
 
-        miTriangulo->dibujarTriangulos(0,2,0);
+       // miTriangulo->dibujarTriangulos(0,2,0);
+
+       
+       /*
+        glTranslatef(0, 0,-5);
+        miCola->DibujarCola(60, 15, 0, -1, 0);
+       
+        glTranslatef(-0.8, -2, -5);
+        miTriangulo->dibujarTriangulos(0, 2, 0);
+
+        glTranslatef(-0.3, -1.5, -5);
+        glutSolidCube(2);
+        */
+
+        glTranslatef(2, -0.5, -15);
+        miCola->DibujarCola(10, 15, 0, -1, 0);
+
+        glTranslatef(-1, -1, -5);
+        miCola->DibujarCola(10, 20, 0, -1, 0);
+
+        glTranslatef(-0.5, -1.5, -5);
+        miCola->DibujarCola(10, 25, 0, -1, 0);
+
+        glTranslatef(0, -2, -5);
+        miCola->DibujarCola(10, 30, 0, -1, 0);
+
+        glTranslatef(0, -2, -5);
+        miCola->DibujarCola(10, 40, 0, -1, 0);
+
+        glTranslatef(0, -3, -5);
+        miCola->DibujarCola(10, 20, 0, -1, 0);
+
+        glTranslatef(0, -3.5, -5);
+        miCola->DibujarCola(10, 25, 0, -1, 0);
+
+        glTranslatef(0, -4, -5);
+        miCola->DibujarCola(10, 30, 0, -1, 0);
+
+        glTranslatef(0, -4.5, -5);
+        miCola->DibujarCola(10, 35, 0, -1, 0);
+       
         
-
-
-
-             
-
-             
+ 
         //Gran Pop
 
          glPopMatrix();
@@ -111,6 +149,7 @@ public:
 	virtual void OnInit()
 	{
         miTriangulo = new Triangulos();
+        miCola = new Cola();
 		glClearColor(0.5f, 0.5f, 1.0f, 0.0f);
 		glShadeModel(GL_SMOOTH);
 		glEnable(GL_DEPTH_TEST);

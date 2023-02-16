@@ -7,11 +7,11 @@
 #include "glsl.h"
 #include <time.h>
 
-class Triangulos
+class Cola
 {
 public:
-	Triangulos();
+	Cola() {};
 
-	void dibujarTriangulos(float x, float y, float z);
+	void DibujarCola(float ANGULO, int n, float x, float y, float z);
 };
 
